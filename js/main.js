@@ -23,6 +23,7 @@ fetch(BREEDS_URL)
         doggoInfo.assignMF()
         doggoInfo.assignAge()
         doggoInfo.assignLike()
+        doggoInfo.assignDislike()
     })
 
     const img = document.querySelector('.dogImg')
@@ -86,9 +87,12 @@ fetch(BREEDS_URL)
             }
             return array;
         },
-assignLike()
-        {
+        assignLike(){
             this.likes = this.yatesShuffle(this.likesList).slice(0,2)
             document.getElementById('likes').innerHTML = `Likes: ${this.likes[0]}, ${this.likes[1]}`
-        }
+        },
+        assignDislike(){
+            this.dislikes = this.yatesShuffle(this.dislikesList).slice(0,2)
+            document.getElementById('dislikes').innerHTML = `Dislikes: ${this.dislikes[0]}, ${this.dislikes[1]}`
+        },
     }
