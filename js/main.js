@@ -21,6 +21,7 @@ fetch(BREEDS_URL)
         let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
         getDoggoImg(url)
         doggoInfo.assignMF()
+        doggoInfo.assignAge()
     })
 
     const img = document.querySelector('.dogImg')
@@ -64,5 +65,10 @@ fetch(BREEDS_URL)
         assignName(array){
             this.rname = array[Math.floor(Math.random() * array.length)] // Randomly choosing an index number for the array to randomly pick a name in that index
             document.getElementById('dogName').innerHTML = `${this.rname}` // Putting the random name we got above and putting it into the html element with the id dogName.
+        },
+
+        assignAge(){
+            this.age = Math.floor(Math.random() * 16 + 1)
+            document.getElementById('age').innerHTML = `Age: ${this.age}`
         }
     }
