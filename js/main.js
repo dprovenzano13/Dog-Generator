@@ -58,6 +58,7 @@ fetch(BREEDS_URL)
                 this.MF = 'Male'
                 this.assignName(this.mNames)
             }
+            document.getElementById('MF').innerHTML = `S: ${this.MF}`
         },
 
         assignName(array){
