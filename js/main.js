@@ -20,6 +20,7 @@ fetch(BREEDS_URL)
     
         let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
         getDoggoImg(url)
+        doggoInfo.assignMF()
     })
 
     const img = document.querySelector('.dogImg')
@@ -47,4 +48,20 @@ fetch(BREEDS_URL)
         likes: '',
         dislikes: '',
         fact: '',
+
+        assignMF(){
+            x = (Math.floor(Math.random() * 2) ==0 )
+            if(x){
+                this.MF = 'Female'
+                this.assignName(this.fNames)
+            } else {
+                this.MF = 'Male'
+                this.assignName(this.mNames)
+            }
+        },
+
+        assignName(array){
+            this.rname = array[Math.floor(Math.random() * array.length)]
+            document.getElementById('dogName').innerHTML = `${this.rname}`
+        }
     }
