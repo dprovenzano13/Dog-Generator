@@ -8,5 +8,8 @@ fetch(BREEDS_URL)
     .then(data => {
         const breedsObject = data.message // Turn the message into an object
         const breedsArray = Object.keys(breedsObject) // Turn object into an array
-        console.log(breedsArray)
+        for(let i = 0; i < breedsArray.length; i++){
+            const option = document.createElement('option') // Creating an <option> tag
+            option.value = breedsArray[i] // Creates the value of option to be a specific breed
+        }
     })
