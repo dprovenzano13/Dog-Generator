@@ -6,6 +6,7 @@ fetch(BREEDS_URL)
         return res.json();
     })
     .then(data => {
-        const breedsObject = data.message
-        const breedsArray = Object.keys(breedsObject)
+        const breedsObject = data.message // Turn the message into an object
+        const breedsArray = Object.keys(breedsObject) // Turn object into an array
+        console.log(breedsArray)
     })
