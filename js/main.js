@@ -50,15 +50,15 @@ fetch(BREEDS_URL)
         fact: '',
 
         assignMF(){
-            x = (Math.floor(Math.random() * 2) ==0 )
-            if(x){
+            x = (Math.floor(Math.random() * 2) ==0 ) // Picks a random number and sees if its true or false... is it equal to 0 or not
+            if(x){ // if x is true make the MF (MALE OR FEMALE) female
                 this.MF = 'Female'
-                this.assignName(this.fNames)
-            } else {
+                this.assignName(this.fNames) // Also if its a female, we are calling another method
+            } else { // if x is true make the MF (MALE OR FEMALE) male
                 this.MF = 'Male'
                 this.assignName(this.mNames)
             }
-            document.getElementById('MF').innerHTML = `S: ${this.MF}`
+            document.getElementById('MF').innerHTML = `S: ${this.MF}` // Grabbing the li with the id 'MF' and assigning it the gender coming from the coin toss (math.random())
         },
 
         assignName(array){
