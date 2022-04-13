@@ -51,18 +51,18 @@ fetch(BREEDS_URL)
 
         assignMF(){
             x = (Math.floor(Math.random() * 2) ==0 ) // Picks a random number and sees if its true or false... is it equal to 0 or not
-            if(x){ // if x is true make the MF (MALE OR FEMALE) female
+            if(x){ // if x is true, make the MF: '' = female
                 this.MF = 'Female'
                 this.assignName(this.fNames) // Also if its a female, we are calling another method
-            } else { // if x is true make the MF (MALE OR FEMALE) male
-                this.MF = 'Male'
+            } else { 
+                this.MF = 'Male' // if x is false make the MF: '' = male
                 this.assignName(this.mNames)
             }
             document.getElementById('MF').innerHTML = `S: ${this.MF}` // Grabbing the li with the id 'MF' and assigning it the gender coming from the coin toss (math.random())
         },
 
         assignName(array){
-            this.rname = array[Math.floor(Math.random() * array.length)]
-            document.getElementById('dogName').innerHTML = `${this.rname}`
+            this.rname = array[Math.floor(Math.random() * array.length)] // Randomly choosing an index number for the array to randomly pick a name in that index
+            document.getElementById('dogName').innerHTML = `${this.rname}` // Putting the random name we got above and putting it into the html element with the id dogName.
         }
     }
