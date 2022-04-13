@@ -98,6 +98,6 @@ fetch(BREEDS_URL)
         },
         assignFact(){
             this.fact = this.factList[Math.floor(Math.random() * this.factList.length)]
-            document.getElementById('funFact').innerHTML = `Additional facts: ${this.fact}`
+            document.getElementById('funFact').innerHTML = `Additional info: ${this.fact}`
         }
     }
