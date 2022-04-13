@@ -22,6 +22,7 @@ fetch(BREEDS_URL)
         getDoggoImg(url)
         doggoInfo.assignMF()
         doggoInfo.assignAge()
+        doggoInfo.assignLike()
     })
 
     const img = document.querySelector('.dogImg')
@@ -70,5 +71,24 @@ fetch(BREEDS_URL)
         assignAge(){
             this.age = Math.floor(Math.random() * 16 + 1)
             document.getElementById('age').innerHTML = `Age: ${this.age}`
+        },
+
+        yatesShuffle(array){
+            let m = array.length, t, i;
+        // While there remain elements to shuffle...
+            while (m){
+        // Pick a remaining element...
+                i = Math.floor(Math.random() * m--);
+        // And swap it with the current element
+                t = array[m];
+                array[m] = array [i];
+                array[i] = t;
+            }
+            return array;
+        },
+assignLike()
+        {
+            this.likes = this.yatesShuffle(this.likesList).slice(0,2)
+            document.getElementById('likes').innerHTML = `Likes: ${this.likes[0]}, ${this.likes[1]}`
         }
     }
