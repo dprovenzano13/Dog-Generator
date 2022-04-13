@@ -18,12 +18,13 @@ fetch(BREEDS_URL)
 
     select.addEventListener('change', event => {
     
-        let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
+        let url = `https://dog.ceo/api/breed/${event.target.value}/images/random` // sets the custom url to the variable. You customize the url with backticks ---------------------^------^------^--
         getDoggoImg(url)
         doggoInfo.assignMF()
         doggoInfo.assignAge()
         doggoInfo.assignLike()
         doggoInfo.assignDislike()
+        doggoInfo.assignFact()
     })
 
     const img = document.querySelector('.dogImg')
@@ -95,4 +96,8 @@ fetch(BREEDS_URL)
             this.dislikes = this.yatesShuffle(this.dislikesList).slice(0,2)
             document.getElementById('dislikes').innerHTML = `Dislikes: ${this.dislikes[0]}, ${this.dislikes[1]}`
         },
+        assignFact(){
+            this.fact = this.factList[Math.floor(Math.random() * this.factList.length)]
+            document.getElementById('funFact').innerHTML = `Additional facts: ${this.fact}`
+        }
     }
